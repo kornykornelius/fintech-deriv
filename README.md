@@ -3,6 +3,7 @@ A small mobile web app fintech prototype that helps users send money while clear
 
 ## Links
 - Live: https://fintech-deriv.vercel.app
+- Design System: https://fintech-deriv.vercel.app/design-system
 - Figma: https://www.figma.com/design/XAnP385an6edNhPz1LVC1C/Deriv?node-id=0-1&p=f&t=0INmgAenS3yvEbGL-0
 
 ## Scope
@@ -16,7 +17,8 @@ A small mobile web app fintech prototype that helps users send money while clear
 I focused on one simple complete transfer money journey instead of building multiple disconnected features.
 
 ## AI Usage
-I used Claude Design to explore ideas and generate visual references. Once the design was finalised, I handed it over to Claude Cowork to build the prototype, including subtle animations and transitions.
+I used Claude Design to explore ideas and generate visual references. Once the design was finalised, I first tried using Figma MCP with Claude Code to build the interface. However, it generated a design system instead, which I then kept as a styling guideline.
+Due to the limitations of the Figma Free plan, and because I was concerned that Claude Code might not have enough time to complete the interface, I changed my strategy. I exported each screen as an image and handed them over to Claude Cowork to build the prototype, including subtle animations and transitions.
 
 ## Getting Started
 
