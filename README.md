@@ -2,8 +2,8 @@
 A small mobile web app fintech prototype that helps users send money while clearly understanding the transfer fee, total charge and estimated arrival time. 
 
 ## Links
-Live: https://fintech-deriv.vercel.app
-Figma: https://www.figma.com/design/XAnP385an6edNhPz1LVC1C/Deriv?node-id=0-1&p=f&t=0INmgAenS3yvEbGL-0
+- Live: https://fintech-deriv.vercel.app
+- Figma: https://www.figma.com/design/XAnP385an6edNhPz1LVC1C/Deriv?node-id=0-1&p=f&t=0INmgAenS3yvEbGL-0
 
 ## Scope
 - Balance overview
