@@ -1,26 +1,153 @@
 @import "tailwindcss";
 
+/*
+  Design tokens — sourced from the Deriv UI kit in Figma.
+  Values marked (derived) are not in the kit; they extend the same
+  Tailwind-palette families the kit is built on (slate/blue/green/red/amber).
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Background & surface */
+  --background: #ffffff; /* Colours/Neutral/White */
+  --surface: #ffffff;
+  --surface-subtle: #f1f5f9; /* Colours/Neutral/Subtle background */
+
+  /* Text */
+  --foreground: #0f172a; /* Colours/Neutral/900 */
+  --muted-foreground: #64748b; /* Colours/Neutral/500 */
+  --inverse-foreground: #ffffff; /* Text/Inverse */
+
+  /* Primary */
+  --primary: #2563eb; /* Colours/Primary/Default */
+  --primary-hover: #1d4ed8; /* (derived) */
+  --primary-subtle: #eff6ff; /* (derived) */
+  --primary-foreground: #ffffff;
+
+  /* Secondary */
+  --secondary: #f1f5f9;
+  --secondary-hover: #e2e8f0; /* (derived) */
+  --secondary-foreground: #475569; /* Colours/Neutral/600 */
+
+  /* Border */
+  --border: #e2e8f0; /* Border/Default */
+  --border-strong: #cbd5e1; /* (derived) */
+
+  /* Status */
+  --success: #16a34a; /* Colours/Success/Default */
+  --success-strong: #15803d; /* (derived) */
+  --success-subtle: #f0fdf4; /* Colours/Success/Subtle */
+  --warning: #d97706; /* (derived) */
+  --warning-strong: #b45309; /* (derived) */
+  --warning-subtle: #fffbeb; /* (derived) */
+  --error: #dc2626; /* Colours/Error/Default */
+  --error-strong: #b91c1c; /* Colours/Error/Strong */
+  --error-subtle: #fef2f2; /* Colours/Error/Subtle */
+
+  /* Focus ring */
+  --ring: #2563eb;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-surface: var(--surface);
+  --color-surface-subtle: var(--surface-subtle);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-inverse-foreground: var(--inverse-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-subtle: var(--primary-subtle);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-success: var(--success);
+  --color-success-strong: var(--success-strong);
+  --color-success-subtle: var(--success-subtle);
+  --color-warning: var(--warning);
+  --color-warning-strong: var(--warning-strong);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-error: var(--error);
+  --color-error-strong: var(--error-strong);
+  --color-error-subtle: var(--error-subtle);
+
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-inter);
+
+  /* Typography — Figma text styles (H2 derived to complete the scale) */
+  --text-h1: 2rem; /* Heading/H1 32/40 Bold */
+  --text-h1--line-height: 2.5rem;
+  --text-h1--font-weight: 700;
+  --text-h2: 1.5rem; /* (derived) 24/32 Semi Bold */
+  --text-h2--line-height: 2rem;
+  --text-h2--font-weight: 600;
+  --text-h3: 1.25rem; /* Heading/H3 20/28 Semi Bold */
+  --text-h3--line-height: 1.75rem;
+  --text-h3--font-weight: 600;
+  --text-h4: 1rem; /* Heading/H4 16/24 Semi Bold */
+  --text-h4--line-height: 1.5rem;
+  --text-h4--font-weight: 600;
+  --text-body: 0.875rem; /* Body 14/20 */
+  --text-body--line-height: 1.25rem;
+  --text-body-sm: 0.75rem; /* Body/Small 12/16 */
+  --text-body-sm--line-height: 1rem;
+
+  /* Border radius — the kit uses 4px throughout (rounded-md) */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+
+  /* Shadows (derived, slate-tinted) */
+  --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.06);
+  --shadow-md: 0 2px 8px -1px rgb(15 23 42 / 0.08), 0 1px 2px -1px rgb(15 23 42 / 0.04);
+  --shadow-lg: 0 8px 24px -4px rgb(15 23 42 / 0.12), 0 2px 6px -2px rgb(15 23 42 / 0.06);
+
+  /* Animations — subtle screen and element transitions for the prototype */
+  --animate-screen-in: screen-in 300ms ease-out both;
+  --animate-scale-in: scale-in 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  --animate-fade-in: fade-in 300ms ease-out both;
+
+  @keyframes screen-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
