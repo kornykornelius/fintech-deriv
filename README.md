@@ -4,7 +4,7 @@ A small mobile web app fintech prototype that helps users send money while clear
 ## Links
 - Live: https://fintech-deriv.vercel.app
 - Design System: https://fintech-deriv.vercel.app/design-system
-- Figma: https://www.figma.com/design/XAnP385an6edNhPz1LVC1C/Deriv?node-id=0-1&p=f&t=0INmgAenS3yvEbGL-0
+- Figma: https://www.figma.com/design/XAnP385an6edNhPz1LVC1C/Deriv?node-id=0-1&t=KKYH3V2Tt0v90P1E-1
 
 ## Scope
 - Balance overview
